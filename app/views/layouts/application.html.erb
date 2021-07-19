@@ -13,38 +13,42 @@
 
   <body>
     <% if flash[:notice] %>
-      <div class="notification is-info">
-        <p class="content is-medium"><%= notice %></p>
+      <div class="temporary">
+        <div class="notification is-info">
+          <p class="content is-medium"><%= notice %></p>
+        </div>
       </div>
     <% end %>
     <% if flash[:alert] %>
-      <div class="notification is-danger">
-        <p class="content is-medium"><%= alert %></p>
+      <div class="temporary">
+        <div class="notification is-danger">
+          <p class="content is-medium"><%= alert %></p>
+        </div>
       </div>
     <% end %>
-    <nav class="navbar">
+    <nav class="navbar has-background-grey-dark">
       <div class="container">
 
         <div class="navbar-brand">
           <%= link_to root_path, class: 'navbar-item' do %>
-              <h3 class="title is-3 has-background-primary-light">MembersOnly!</h3>
+              <h3 class="title is-3 has-text-primary-light">MembersOnly!</h3>
             <% end %>
         </div>
         <div class="navbar-end">
         <div class="buttons">
           <% if user_signed_in? %>
               <div class="navbar-item">
-                <%= link_to current_user.name, edit_user_registration_path, class: "button is-info is-inverted" %>
+                <%= link_to "Edit account", edit_user_registration_path, class: "button is-primary is-active" %>
               </div>
               <div>
-                <%= link_to "Logout", destroy_user_session_path, method: :delete, class:"button is-info is-inverted" %>
+                <%= link_to "Logout", destroy_user_session_path, method: :delete, class:"button is-danger is-active" %>
               </div>
             <% else %>
               <div class="navbar-item">
-                <%= link_to 'Sign In', new_user_session_path, class: "button is-info is-inverted" %>
+                <%= link_to 'Sign In', new_user_session_path, class: "button is-warning is-active" %>
               </div>
               <div class="navbar-item">
-                <%= link_to 'Sign Up', new_user_registration_path, class: "button is-success is-inverted" %>
+                <%= link_to 'Sign Up', new_user_registration_path, class: "button is-success is-active" %>
               </div>
             <% end %>
         </div>

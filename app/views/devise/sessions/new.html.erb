@@ -8,15 +8,6 @@
             <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
               <div class="container">
                 <div class="field py-1">
-                  <%= f.label :name %><br />
-                    <div class="control has-icons-left">
-                      <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "input" %>
-                      <span class="icon is-small is-left">
-                        <i class="far fa-user"></i>
-                      </span>
-                    </div>
-                </div>
-                <div class="field py-1">
                   <%= f.label :email %><br />
                   <div class="control has-icons-left">
                     <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input" %>

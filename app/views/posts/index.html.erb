@@ -1,8 +1,14 @@
 <%# Index can be considered the "main page" %>
-<div class="index-page">
-  <% if user_signed_in? %>
-    <%= render 'form', post: @post %>
-  <% end %>
-  <%= render 'secrets', posts: @posts %>
-  <%# recent %>
-</div>
+<section class="section">
+  <article class="columns">
+    <% if user_signed_in? %>
+      <div class="column is-one-third">
+        <%= render 'form', post: @post %>
+      </div>
+    <% end %>
+    <div class="column is-half">
+      <%= render 'secrets', posts: @posts %>
+    </div>
+    <%# recent %>
+  </article>
+</section>

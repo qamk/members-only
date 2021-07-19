@@ -1,7 +1,21 @@
-<%= form_with model: post do |form| %>
-<%= form.label(:title, 'Title') %>
-<%= form.text_field(:title, placeholder: 'A short summary') %>
-<%= form.label(:body, 'Anonymous Message') %>
-<%= form.text_area(:body, placeholder: 'Your secret goes here...') %>
-<%= form.submit class: "button is-success" %>
-<% end %>
+<div class="block">
+  <div class="container">
+    <article class="box">
+      <%= form_with model: post do |form| %>
+      <div class="field">
+        <%= form.label(:title, 'Title (optional)') %>
+        <div class="control">
+          <%= form.text_field(:title, placeholder: 'A short summary', class: "input") %>
+        </div>
+      </div>
+      <div class="field">
+        <%= form.label(:body, 'Anonymous Message') %>
+        <div class="control">
+          <%= form.text_area(:body, placeholder: 'Your secret goes here...', class: "textarea") %>
+        </div>
+      </div>
+      <%= form.submit class: "button is-success" %>
+      <% end %>
+    </article>
+  </div>
+</div>

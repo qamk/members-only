@@ -1,0 +1,57 @@
+<div class="section">
+  <div class="container">
+    <h3 class="title is-3">Sign Up</h3>
+    <div class="level">
+      <div class="level-left">
+        <div class="level-item">
+          <div class="box">
+            <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+              <%= render "devise/shared/error_messages", resource: resource %>
+              <div class="container">
+                <div class="field py-1">
+                    <%= f.label :email %><br />
+                  <div class="control has-icons-left">
+                    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input" %>
+                    <span class="icon is-small is-left">
+                      <i class="far fa-envelope"></i>
+                    </span>
+                  </div>
+                </div>
+                <div class="field py-1">
+                    <%= f.label :password %>
+                    <% if @minimum_password_length %>
+                    <em>(<%= @minimum_password_length %> characters minimum)</em>
+                    <% end %>
+                  <div class="control has-icons-left">
+                    <%= f.password_field :password, autocomplete: "new-password", class: "input" %>
+                    <span class="icon is-small is-left">
+                      <i class="fas fa-lock"></i>
+                    </span>
+                  </div>
+                </div>
+                <div class="field py-1">
+                    <%= f.label :password_confirmation %><br />
+                  <div class="control has-icons-left">
+                    <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"input" %>
+                    <span class="icon is-small is-left">
+                      <i class="fas fa-lock"></i>
+                    </span>
+                  </div>
+                </div>
+                <div class="field py-1">
+                  <div class="control">
+                    <div class="actions">
+                      <%= f.submit "Sign up", class: "button is-outlined" %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%= render "devise/shared/links" %>
+  </div>
+
+</div>

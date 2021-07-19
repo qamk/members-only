@@ -1,2 +1,8 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<%# Index can be considered the "main page" %>
+<div class="index-page">
+  <% if user_signed_in? %>
+    <%= render 'form', post: @post %>
+  <% end %>
+  <%= render 'secrets', posts: @posts %>
+  <%# recent %>
+</div>

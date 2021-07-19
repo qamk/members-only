@@ -4,7 +4,7 @@ class Post < ApplicationRecord
   
   validates :body_word_count, length: { within: 1..70, message: 'Must be less than 70 words long' }
   validates :title_word_count, length: { within: 1..20, message: 'Must be between 1 and 20 words long' }
-  
+  validates :body, :title, presence: true
 
   protected
 

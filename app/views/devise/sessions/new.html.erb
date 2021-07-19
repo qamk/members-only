@@ -3,29 +3,52 @@
     <h3 class="title is-3">Sign in</h3>
     <div class="level">
       <div class="level-left">
-        <div class="level-item">
-          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-            <div class="field">
-              <%= f.label :email %><br />
-              <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-            </div>
+        <div class="box">
+          <div class="level-item">
+            <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+              <div class="container">
+                <div class="field py-1">
+                  <%= f.label :name %><br />
+                    <div class="control has-icons-left">
+                      <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "input" %>
+                      <span class="icon is-small is-left">
+                        <i class="far fa-user"></i>
+                      </span>
+                    </div>
+                </div>
+                <div class="field py-1">
+                  <%= f.label :email %><br />
+                  <div class="control has-icons-left">
+                    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input" %>
+                    <span class="icon is-small is-left">
+                      <i class="far fa-envelope"></i>
+                    </span>
+                  </div>
+                </div>
 
-            <div class="field">
-              <%= f.label :password %><br />
-              <%= f.password_field :password, autocomplete: "current-password" %>
-            </div>
+                <div class="field py-1">
+                  <%= f.label :password %><br />
+                  <div class="control has-icons-left">
+                  <%= f.password_field :password, autocomplete: "current-password", class: "input" %>
+                    <span class="icon is-small is-left">
+                      <i class="fas fa-lock"></i>
+                    </span>
+                  </div>
+                </div>
 
-            <% if devise_mapping.rememberable? %>
-              <div class="field">
-                <%= f.check_box :remember_me %>
-                <%= f.label :remember_me %>
+                <% if devise_mapping.rememberable? %>
+                  <div class="field py-1">
+                    <%= f.check_box :remember_me %>
+                    <%= f.label :remember_me %>
+                  </div>
+                <% end %>
+
+                <div class="actions">
+                  <%= f.submit "Log in", class: "button is-outlined is-info" %>
+                </div>
+              <% end %>
               </div>
-            <% end %>
-
-            <div class="actions">
-              <%= f.submit "Log in" %>
-            </div>
-          <% end %>
+          </div>
         </div>
       </div>
     </div>
